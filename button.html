@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box{
+            width: 300px;
+            border: solid  1px black;
+        }
+        #but{
+            width: 300px;
+            border: solid 1px black;
+            display:flex;
+            justify-content: space-around;
+        }
+        #display{
+            height: 50px;
+            border: solid 1px blue;
+            text-align: center;
+            padding: 20px;
+        }
+    </style>
+    <script>
+        function showName(name){
+            const dis=document.querySelector('#display');
+            dis.textContent=name;
+            // alert("버튼이름: "+name)
+        }
+        const showAlert=()=>{
+            const dis=document.querySelector('#display');
+            dis.addEventListener('click', showAlert);
+            // alert(dis.textContent);
+            // alert(dis.innerHTML)
+        }
+    </script>
+</head>
+<body>
+    <div id="box">
+        <div id="but">
+            <button onclick="showName(this.textContent)">버튼1</button>
+            <button onclick="showName(this.textContent)">버튼2</button>
+            <button onclick="showName(this.textContent)">버튼3</button>
+        </div>
+        <div onclick="showAlert()" id="display"> 클릭한 버튼 이름표시</div>
+    </div>
+</body>
+</html>
